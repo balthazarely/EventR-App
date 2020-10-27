@@ -26,6 +26,7 @@ export default function Nav({ setFormOpen }) {
           Revents
         </Menu.Item>
         <Menu.Item name="Events" as={NavLink} to="/events" />
+        <Menu.Item name="Sandbox" as={NavLink} to="/sandbox" />
         {authenticated && (
           <Menu.Item>
             <Button

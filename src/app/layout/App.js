@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./features/nav/Navbar";
-import EventDashboards from "./features/events/eventDashboard/EventDashboards";
+import Navbar from "../../features/nav/Navbar";
+import EventDashboards from "../../features/events/eventDashboard/EventDashboards";
+import Sandbox from "../../features/sandbox/Sandbox";
 import { Container } from "semantic-ui-react";
 import { Route } from "react-router-dom";
-import HomePage from "./features/home/HomePage";
-import EventDetailedPage from "./features/events/eventDetailed/EventDetailedPage";
-import EventForm from "./features/events/eventForm/EventForm";
+import HomePage from "../../features/home/HomePage";
+import EventDetailedPage from "../../features/events/eventDetailed/EventDetailedPage";
+import EventForm from "../../features/events/eventForm/EventForm";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Navbar />
             <Container className="main">
               <Route exact path="/events" component={EventDashboards} />
+              <Route exact path="/sandbox" component={Sandbox} />
               <Route exact path="/event/:id" component={EventDetailedPage} />
               <Route
                 exact
