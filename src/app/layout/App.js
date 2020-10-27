@@ -4,12 +4,14 @@ import Navbar from "../../features/nav/Navbar";
 import EventDashboards from "../../features/events/eventDashboard/EventDashboards";
 import Sandbox from "../../features/sandbox/Sandbox";
 import { Container } from "semantic-ui-react";
-import { Route } from "react-router-dom";
+import { Route, useLocation } from "react-router-dom";
 import HomePage from "../../features/home/HomePage";
 import EventDetailedPage from "../../features/events/eventDetailed/EventDetailedPage";
 import EventForm from "../../features/events/eventForm/EventForm";
 
 function App() {
+  const { key } = useLocation();
+
   return (
     <div>
       <Route exact path="/" component={HomePage} />
@@ -27,6 +29,8 @@ function App() {
               <Route
                 exact
                 path={["/createEvent", "/manage/:id"]}
+                key={key}
+                // using the useLocation hook makes it so that we rerender this form when the create event btn is clicked.
                 component={EventForm}
               />
               {/* This will open up this route if either of these are hit */}

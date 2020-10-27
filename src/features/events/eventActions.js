@@ -1,4 +1,4 @@
-import { CREATE_EVENT } from "./eventConstants";
+import { CREATE_EVENT, UPDATE_EVENT, DELETE_EVENT } from "./eventConstants";
 
 export function createEvent(event) {
   return {
